@@ -12,7 +12,7 @@ $(document).ready(function () {
     reset();
 
     $.ajax({
-        url: "http://localhost:3000/connect",
+        url: "https://canmypeteat.herokuapp.com/connect",
         type: "POST",
         success: function (data) {
             console.log(data);
@@ -53,7 +53,7 @@ $(".pet").click(function () {
     reset();
     $("#search_box:hidden").toggle("slow");
     $.ajax({
-        url: "http://localhost:3000/get",
+        url: "https://canmypeteat.herokuapp.com/get",
         type: "POST",
         data: getPet(),
         contentType: "text/plain",
