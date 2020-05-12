@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Can My Pet Eat This</title>
+        <meta name="description" content="The HTML5 Herald" />
+        <meta name="author" content="SitePoint" />
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="css/materialize.css"
+            media="screen,projection"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <div class="section" id="index-banner">
+            <div class="container">
+                <br /><br />
+                <h1 class="header center white-text">Can my <br /></h1>
+
+                <div class="row center">
+                    <br />
+                    <!-- Dropdown Trigger -->
+                    <a
+                        class="btn-large light-blue accent-1 black-text"
+                        id="pets_dropdown"
+                        data-target="pets"
+                        >Select Pet</a
+                    >
+                </div>
+
+                <!-- Dropdown Structure -->
+                <ul id="pets" class="dropdown-content">
+                    <li><a class="pet black-text">🐈 Cat</a></li>
+                    <li><a class="pet black-text">🐕 Dog</a></li>
+                    <li><a class="pet black-text">🐍 Snake</a></li>
+                </ul>
+
+                <h1 class="header center white-text">
+                    eat...
+                </h1>
+                <br />
+                <nav id="search_box" style="display: none;">
+                    <div class="nav-wrapper">
+                        <form>
+                            <div class="input-field blue lighten-5">
+                                <input
+                                    type="search"
+                                    class="autocomplete"
+                                    id="search"
+                                    autocomplete="off"
+                                />
+                                <label class="label-icon" for="search"
+                                    ><i
+                                        class="material-icons grey-text text-darken-2"
+                                        id="search_icon"
+                                        >search</i
+                                    ></label
+                                >
+                                <i
+                                    class="material-icons grey-text text-darken-2"
+                                    id="search_clear"
+                                    >close</i
+                                >
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+                <br />
+            </div>
+        </div>
+
+        <div
+            class="section green accent-4"
+            id="food_info"
+            style="display: none;"
+        >
+            <h1 class="header center white-text" id="yes_no"></h1>
+            <h3 class="center white-text" id="food_header"></h3>
+            <div class="row">
+                <br />
+                <br />
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col l4">
+                        <img id="food_image" />
+                    </div>
+                    <div class="col offset-l2 l6">
+                        <p
+                            class="grey-text text-lighten-4"
+                            id="description"
+                        ></p>
+                    </div>
+                </div>
+                <div class="row center">
+                    <a
+                        class="waves-effect waves-blue btn white blue-text"
+                        id="source"
+                        >Source</a
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="disclaimer" class="modal">
+            <div class="modal-content">
+                <h4>Disclaimer</h4>
+                <p>
+                    By clicking Agree you agree to the following while using
+                    this site
+                </p>
+                <ul>
+                    <li>• The Site Does Not Provide Medical Advice</li>
+                    <li>
+                        • The use of the content on this website is at your own
+                        risk.
+                    </li>
+                    <li>
+                        • I have no liability or responsibility for any damages
+                        that arise from using this website. <"No responsibility"
+                        disclaimer>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <a
+                    href="#!"
+                    class="modal-close waves-effect waves-green btn-flat"
+                    >Agree</a
+                >
+            </div>
+        </div>
+
+        <div class="section blue">
+            <div class="container">
+                <h4 class="center white-text">Can I trust this website?</h4>
+                <p class="center white-text">
+                    My goal is to provide a rough idea on how safe the food is
+                    for your pet. You should always consult a professional
+                    veterinarian for actual advice.
+                </p>
+                <div class="divider"></div>
+                <h4 class="center white-text">What does "YES" really mean?</h4>
+                <p class="center white-text">
+                    The food's safety can depend on your pet's health condition,
+                    or the food's condition itself. Also, you should assume that
+                    such food is safe only when given in moderation. Foods that
+                    are safe in small amounts can be dangerous or fatal in large
+                    amounts.
+                </p>
+                <div class="divider"></div>
+                <h4 class="center white-text">Why did you make this?</h4>
+                <p class="center white-text">
+                    I don't want my pet to die.
+                </p>
+                <div class="divider"></div>
+                <h4 class="center white-text">Credits</h4>
+                <ul class="center white-text">
+                    <li>
+                        <p>
+                            •
+                            <a
+                                class="yellow-text"
+                                href="https://openmoji.org/"
+                                target="_blank"
+                                >OpenMoji</a
+                            >
+                            for some food icons
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            •
+                            <a
+                                class="yellow-text"
+                                href="https://svgur.com/"
+                                target="_blank"
+                                >Svgur</a
+                            >
+                            for SVG hosting
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <footer class="page-footer blue">
+            <div class="footer-copyright blue darken-2">
+                <div class="container">
+                    Made by
+                    <a class="white-text" href="https://github.com/lidickson1"
+                        >Me</a
+                    >
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/materialize.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
