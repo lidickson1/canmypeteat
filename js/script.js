@@ -107,9 +107,12 @@ $(".pet").click(function () {
                     );
                     $("#food_image").attr("src", food.image);
                     $("#description").text(food.pets[getPet()].description);
-                    $("#source").click(function () {
-                        window.open(food.pets[getPet()].source);
-                    });
+                    //need to call off because it somehow remembers previously set links
+                    $("#source")
+                        .off()
+                        .click(function () {
+                            window.open(food.pets[getPet()].source);
+                        });
                 },
             });
         },
