@@ -1,4 +1,6 @@
 let foods;
+const url =
+    "http://canmypeteat-env.eba-3jdfr74b.us-east-2.elasticbeanstalk.com/";
 
 function reset() {
     $("#food_info:visible").toggle("slow");
@@ -12,7 +14,7 @@ $(document).ready(function () {
     reset();
 
     $.ajax({
-        url: "https://canmypeteat.herokuapp.com/connect",
+        url: url + "connect",
         type: "POST",
         success: function (data) {
             console.log(data);
@@ -53,7 +55,7 @@ $(".pet").click(function () {
     reset();
     $("#search_box:hidden").toggle("slow");
     $.ajax({
-        url: "https://canmypeteat.herokuapp.com/get",
+        url: url + "get",
         type: "POST",
         data: getPet(),
         contentType: "text/plain",
