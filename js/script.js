@@ -50,6 +50,7 @@ $("#search").keypress(function (e) {
 
 $("#pets_dropdown").dropdown();
 
+const fadeTime = 300;
 $(".pet").click(function () {
     $("#pets_dropdown").text($(this).text());
     reset();
@@ -72,7 +73,7 @@ $(".pet").click(function () {
                 onAutocomplete: function (item) {
                     let food = foods[item];
                     let eat = food.pets[getPet()].eat;
-                    console.log(eat);
+                    //console.log(eat);
                     $("#food_info:hidden").toggle("slow");
 
                     let color;
@@ -97,18 +98,35 @@ $(".pet").click(function () {
                     } else if (eat === -1) {
                         yesNo = "NO";
                     }
-                    $("#yes_no").text(yesNo);
-                    $("#food_header").text(
-                        "Your " +
-                            getPet() +
-                            " " +
-                            (eat > -1 ? "can" : "cannot") +
-                            " eat " +
-                            food.plural +
-                            "!"
-                    );
-                    $("#food_image").attr("src", food.image);
-                    $("#description").text(food.pets[getPet()].description);
+                    $("#yes_no")
+                        .fadeOut(fadeTime, function () {
+                            $(this).text(yesNo);
+                        })
+                        .fadeIn(fadeTime);
+                    $("#food_header")
+                        .fadeOut(fadeTime, function () {
+                            $(this).text(
+                                "Your " +
+                                    getPet() +
+                                    " " +
+                                    (eat > -1 ? "can" : "cannot") +
+                                    " eat " +
+                                    food.plural +
+                                    "!"
+                            );
+                        })
+                        .fadeIn(fadeTime);
+                    $("#food_image")
+                        .fadeOut(fadeTime, function () {
+                            $(this).attr("src", food.image);
+                        })
+                        .fadeIn(fadeTime);
+                    //$("#food_image").attr("src", );
+                    $("#description")
+                        .fadeOut(fadeTime, function () {
+                            $(this).text(food.pets[getPet()].description);
+                        })
+                        .fadeIn(fadeTime);
                     //need to call off because it somehow remembers previously set links
                     $("#source")
                         .off()

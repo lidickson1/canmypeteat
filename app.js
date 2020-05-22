@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const MongoClient = require("mongodb").MongoClient;
 const url =
-    "mongodb+srv://dickson:123@pplcountai-p9qbg.mongodb.net/test?retryWrites=true&w=majority";
+    "mongodb+srv://dickson:123@canmypeteat-he5mo.mongodb.net/test?retryWrites=true&w=majority";
 let db;
 
 app.use(bodyParser.text());
