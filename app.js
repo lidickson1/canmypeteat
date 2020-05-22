@@ -46,7 +46,7 @@ async function connect() {
         let cluster = await MongoClient.connect(url, {
             useUnifiedTopology: true,
         });
-        db = cluster.db("canmypeteat").collection("food");
+        db = cluster.db("database").collection("food");
         return;
     } catch (error) {
         throw error;
